@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+.liste {
+  width: 100%;
+  table-layout: auto;
+  padding: 2rem;
+  th {
+    text-align: left;
+    background: #e2e8f0;
+    padding: .75rem;
+  }
+  td {
+    padding: .5rem;
+    background: #f8fafc;
+  }
+}
