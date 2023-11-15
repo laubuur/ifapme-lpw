@@ -10,5 +10,5 @@ import { Adresse } from 'src/app/models/adresse.model';
   styleUrls: ['./adresse.component.scss']
 })
 export class AdresseComponent {
-  @Input() adresse?: Adresse;
+  @Input({ required: true }) adresse?: Adresse;
 }

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Personne } from '../../models/personne.model';
+import { AdresseComponent } from '../adresse/adresse.component';
 
 @Component({
   selector: 'app-personne',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AdresseComponent],
   templateUrl: './personne.component.html',
   styleUrls: ['./personne.component.scss']
 })

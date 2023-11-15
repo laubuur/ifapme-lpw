@@ -1,8 +1,12 @@
-<nav class="menu">
-  <span (click)="setMenu('entreprise')">Entreprises</span>
-  <span (click)="setMenu('personne')">Personnes</span>
-</nav>
-
+<app-menu (choice)="setMenuInApp($event)" [menu]="menu"></app-menu>
+@if(menu === 'entreprise') {
+  <app-entreprise></app-entreprise>
+} @else if(menu === 'personne') {
+  <app-personne></app-personne>
+} @else if(menu === 'pokemon') {
+  <app-pokemon></app-pokemon>
+}
+<!-- 
 <app-entreprise *ngIf="menu === 'entreprise'"></app-entreprise>
 
-<app-personne *ngIf="menu === 'personne'"></app-personne>
+<app-personne *ngIf="menu === 'personne'"></app-personne> -->

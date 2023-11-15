@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Entreprise } from '../../models/entreprise.model';
+import { AdresseComponent } from '../adresse/adresse.component';
+import { DemoService } from 'src/app/services/demo.service';
 
 @Component({
   selector: 'app-entreprise',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AdresseComponent],
   templateUrl: './entreprise.component.html',
   styleUrls: ['./entreprise.component.scss']
 })
@@ -123,4 +125,9 @@ export class EntrepriseComponent {
     }
 ];
 
+    constructor(public service: DemoService) {}
+
+    updateMail() {
+        this.service.updateMail('jean@outlook.com');
+    }
 }

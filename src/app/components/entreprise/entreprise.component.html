@@ -8,13 +8,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let entreprise of entreprises">
-      <td>{{ entreprise.nom }}</td>
-      <td>{{ entreprise.affaire}}</td>
-      <td>{{ entreprise.secteur }}</td>
-      <td>{{ entreprise.adresse?.rue }}, {{ entreprise.adresse?.numero }}
-        <ng-container *ngIf="entreprise.adresse">, </ng-container>
-        {{ entreprise.adresse?.codePostal }} {{ entreprise.adresse?.ville }}</td>
-    </tr>
+    @for(entreprise of entreprises; track entreprise.nom) {
+      <tr>
+        <td>{{ entreprise.nom }}</td>
+        <td>{{ entreprise.affaire | currency:'EUR'}}</td>
+        <td>{{ entreprise.secteur }}</td>
+        <td><app-adresse [adresse]="entreprise.adresse" /></td>
+      </tr>
+    }
   </tbody>
 </table>
+
+<div>
+  {{service.mail}}
+</div>
+
+<button (click)="updateMail()">update</button>
